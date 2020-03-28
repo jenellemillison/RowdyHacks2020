@@ -25,6 +25,24 @@ public class checkStock
 
         return itemInv;
     }
+    public String findStore(int zipCode) throws FileNotFoundException {
+        String store = "";
+        File file = new File("storeList.txt");
+        Scanner scan = new Scanner(file);
+        while(scan.hasNext())
+        {
+            if(scan.nextInt()==zipCode)
+            {
+                store = scan.next();
+                return store;
+            }
+            else
+            {
+                scan.next();
+            }
+        }
+        return "Store not found please try another zip code.";
+    }
     public static void main(String[] args)
     {
 
