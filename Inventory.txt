@@ -1,0 +1,16 @@
+15
+milk_2% 12
+milk_almond 8
+eggs 20
+bread_wheat 10
+bread_white 25
+bananas 7
+apples 6
+oranges 12
+tomatoes 10
+cucumbers 8
+lettuce 9
+toilet_paper 0
+laundry_detergent 7
+soap_liquid 0
+soap_solid 2
