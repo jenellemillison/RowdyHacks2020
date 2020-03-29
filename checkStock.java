@@ -18,20 +18,20 @@ public class checkStock
         }
         return itemInv;
     }
-     public int inventoryCheck(String item) throws FileNotFoundException {
-        int itemInv=-1;
+     public String inventoryCheck(String item) throws FileNotFoundException {
+        String itemInv = null;
         File file = new File("Inventory.txt");
         Scanner scan = new Scanner(file);
         while(scan.hasNext())
         {
             if(item.equals(scan.next()))
             {
-                itemInv = scan.nextInt();
+                itemInv = scan.next();
                 return itemInv;
             }
             else
             {
-                scan.nextInt();
+                scan.next();
             }
         }
         return itemInv;
