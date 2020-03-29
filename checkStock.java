@@ -1,28 +1,21 @@
 public class checkStock
 {
-    public int inventoryCheck(String store, int itemID) throws FileNotFoundException {
-        int count = 0;
-        int itemNum, itemStock, numItems, itemInv=0;
+    public int inventoryCheck(String store, String item) throws FileNotFoundException {
+        int itemInv=-1;
         File file = new File(store+".txt");
         Scanner scan = new Scanner(file);
-        numItems = scan.nextInt();
-        int[][] items = new int[numItems][2];
         while(scan.hasNext())
         {
-            itemNum = scan.nextInt();
-            itemStock = scan.nextInt();
-            items[count][0] = itemNum;
-            items[count][1] = itemStock;
-            count++;
-        }
-        for(int i = 0; i<numItems; i++)
-        {
-            if(itemID==items[i][0])
+            if(item.equals(scan.next()))
             {
-                itemInv = items[i][1];
+                itemInv = scan.nextInt();
+                return itemInv;
+            }
+            else
+            {
+                scan.nextInt();
             }
         }
-
         return itemInv;
     }
     public String findStore(int zipCode) throws FileNotFoundException {
